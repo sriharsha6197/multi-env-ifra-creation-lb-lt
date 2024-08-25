@@ -6,4 +6,5 @@ module "vpc" {
   public_subnets = var.public_subnets
   private_subnets = var.private_subnets
   from_port = var.from_port
+  default_vpc = var.default_vpc
 }
