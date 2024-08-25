@@ -6,6 +6,8 @@ module "vpc" {
   public_subnets = var.public_subnets
   private_subnets = var.private_subnets
   from_port = var.from_port
+  public_azs = var.public_azs
+  private_azs = var.private_azs
 }
 
 module "lb" {
