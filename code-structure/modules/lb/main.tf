@@ -1,10 +1,10 @@
 resource "aws_security_group" "allow_tls" {
-  name        = "${var.env}-sec-grp-lb"
+  name        = "${var.env}-sec-grp-lb-${var.alb_type}"
   description = "Allow TLS inbound traffic and all outbound traffic"
   vpc_id      = var.vpc_id
 
   tags = {
-    Name = "${var.env}-sec-grp-lb"
+    Name = "${var.env}-sec-grp-lb-${var.alb_type}"
   }
 }
 resource "aws_vpc_security_group_ingress_rule" "allow_tls_ipv4" {
