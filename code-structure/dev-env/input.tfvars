@@ -14,5 +14,6 @@ SUBNETS = ""
 alb_type = ""
 internal = ""
 vpc_id = ""
+image_id = ""
 instance_type = "t3.micro"
 components = ["frontend","backend"]
