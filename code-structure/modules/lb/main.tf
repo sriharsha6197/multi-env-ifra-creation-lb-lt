@@ -25,7 +25,7 @@ resource "aws_lb" "test" {
   name               = "${var.env}-${var.alb_type}-lb"
   internal           = var.internal
   load_balancer_type = "application"
-  security_groups    = [aws_security_group.lb_sg.id]
+  security_groups    = [aws_security_group.allow_tls.id]
   subnets            = var.SUBNETS
 
   tags = {
