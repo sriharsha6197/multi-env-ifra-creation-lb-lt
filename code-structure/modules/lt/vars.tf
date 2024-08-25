@@ -25,3 +25,6 @@ variable "private_subnets" {
 variable "terraform_controller_instance" {
   
 }
+variable "vpc_cidr" {
+  
+}

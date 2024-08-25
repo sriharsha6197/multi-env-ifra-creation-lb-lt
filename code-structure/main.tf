@@ -26,6 +26,7 @@ module "lt" {
   source = "./modules/lt"
   env = var.env
   for_each = var.components
+  vpc_cidr = var.vpc_cidr
   image_id = module.vpc.IMAGE_ID
   instance_type = var.instance_type
   vpc_id = module.vpc.VPC_ID
