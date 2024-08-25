@@ -46,9 +46,6 @@ variable "image_id" {
 variable "instance_type" {
   
 }
-variable "vpc_id" {
-  
-}
 variable "components" {
   
 }
