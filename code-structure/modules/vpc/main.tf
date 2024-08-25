@@ -99,3 +99,19 @@ resource "aws_vpc_security_group_egress_rule" "allow_all_traffic_ipv4" {
   cidr_ipv4         = var.public_rt_cidr_block
   ip_protocol       = "-1"
 }
+resource "aws_vpc_peering_connection" "foo" {
+  peer_owner_id = aws_vpc.main.owner_id
+  peer_vpc_id   = aws_vpc.default_vpc.id
+  vpc_id        = aws_vpc.main.id
+}
+resource "aws_route" "peering_route_from_default_rt" {
+  route_table_id            = data.aws_vpc.default_vpc.default_route_table_id
+  destination_cidr_block    = var.vpc_cidr
+  vpc_peering_connection_id = aws_vpc_peering_connection.foo.id
+}
+resource "aws_route" "peering_route_from_created_vpc_private" {
+  for_each = zipmap(range(length(var.private_subnets)),var.private_subnets)
+  route_table_id = aws_route_table.private_route_tables[each.key].id
+  destination_cidr_block = data.aws_vpc.default_vpc.cidr_block
+  vpc_peering_connection_id = aws_vpc_peering_connection.foo.id
+}
