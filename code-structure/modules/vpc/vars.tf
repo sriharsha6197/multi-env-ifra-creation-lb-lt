@@ -15,6 +15,3 @@ variable "public_rt_cidr_block" {
 variable "from_port" {
   
 }
-variable "default_vpc" {
-  
-}
