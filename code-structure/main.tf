@@ -21,3 +21,16 @@ module "lb" {
   vpc_id = module.vpc.VPC_ID
   SUBNETS = each.value == "false" ? module.vpc.PUBLIC_SUBNETS : module.vpc.PRIVATE_SUBNETS
 }
+
+module "lt" {
+  source = "./modules/lt"
+  env = var.env
+  for_each = var.components
+  image_id = module.vpc.image_id
+  instance_type = var.instance_type
+  vpc_id = module.vpc.VPC_ID
+  components = each.value
+  from_port = var.from_port
+  public_rt_cidr_block = var.public_rt_cidr_block
+  private_subnets = module.vpc.PRIVATE_SUBNETS
+}

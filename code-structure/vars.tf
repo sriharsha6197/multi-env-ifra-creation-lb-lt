@@ -40,3 +40,15 @@ variable "public_azs" {
 variable "private_azs" {
   
 }
+variable "image_id" {
+  
+}
+variable "instance_type" {
+  
+}
+variable "vpc_id" {
+  
+}
+variable "components" {
+  
+}
