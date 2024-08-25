@@ -108,7 +108,7 @@ resource "aws_vpc_peering_connection" "foo" {
   }
 }
 resource "aws_route" "peering_route_from_default_rt" {
-  route_table_id            = data.aws_vpc.default_vpc.default_route_table_id
+  route_table_id            = data.aws_vpc.default_vpc.main_route_table_id
   destination_cidr_block    = var.vpc_cidr
   vpc_peering_connection_id = aws_vpc_peering_connection.foo.id
 }
