@@ -101,7 +101,7 @@ resource "aws_vpc_security_group_egress_rule" "allow_all_traffic_ipv4" {
 }
 resource "aws_vpc_peering_connection" "foo" {
   peer_owner_id = aws_vpc.main.owner_id
-  peer_vpc_id   = aws_vpc.default_vpc.id
+  peer_vpc_id   = data.aws_vpc.default_vpc.id
   vpc_id        = aws_vpc.main.id
   tags = {
     Name = "VPC Peering between ${aws_vpc.main.tags.Name} and ${data.aws_vpc.default_vpc.tags.Name}"
