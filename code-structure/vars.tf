@@ -16,3 +16,27 @@ variable "public_rt_cidr_block" {
 variable "from_port" {
   type = set(string)
 }
+variable "alb_type" {
+  
+}
+variable "internal" {
+  
+}
+variable "SUBNETS" {
+  
+}
+variable "alb_type_internal" {
+  type = map(string)
+  default = {
+    
+  }
+}
+variable "vpc_id" {
+  
+}
+variable "public_azs" {
+  
+}
+variable "private_azs" {
+  
+}
