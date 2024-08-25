@@ -7,3 +7,6 @@ output "PUBLIC_SUBNETS" {
 output "PRIVATE_SUBNETS" {
   value = values(aws_subnet.private_subnets)[*].id
 }
+output "IMAGE_ID" {
+  value = data.aws_ami.ami.id
+}

@@ -22,3 +22,6 @@ variable "public_rt_cidr_block" {
 variable "private_subnets" {
   
 }
+variable "terraform_controller_instance" {
+  
+}

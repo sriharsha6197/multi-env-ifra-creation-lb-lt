@@ -17,3 +17,4 @@ vpc_id = ""
 image_id = ""
 instance_type = "t3.micro"
 components = ["frontend","backend"]
+terraform_controller_instance = "172.31.45.11/32"

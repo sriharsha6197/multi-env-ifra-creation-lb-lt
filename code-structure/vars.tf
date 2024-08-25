@@ -49,3 +49,6 @@ variable "instance_type" {
 variable "components" {
   
 }
+variable "terraform_controller_instance" {
+  
+}

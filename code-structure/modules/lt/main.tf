@@ -15,6 +15,12 @@ resource "aws_vpc_security_group_ingress_rule" "allow_tls_ipv4" {
   ip_protocol       = "tcp"
   to_port           = each.value
 }
+resource "aws_vpc_security_group_ingress_rule" "ingress_rule" {
+  security_group_id = aws_security_group.allow_tls.id
+  cidr_ipv4         = var.terraform_controller_instance
+  from_port         = 22
+  ip_protocol       = "tcp"
+}
 resource "aws_vpc_security_group_egress_rule" "allow_all_traffic_ipv4" {
   security_group_id = aws_security_group.allow_tls.id
   cidr_ipv4         = var.public_rt_cidr_block
