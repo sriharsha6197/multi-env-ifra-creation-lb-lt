@@ -60,4 +60,5 @@ resource "aws_rds_cluster_instance" "cluster_instances" {
   instance_class     = var.instance_type_rds
   engine             = aws_rds_cluster.default.engine
   engine_version     = aws_rds_cluster.default.engine_version
+  apply_immediately =  truesdsd
 }
