@@ -10,14 +10,14 @@ resource "aws_security_group" "allow_tls" {
 resource "aws_vpc_security_group_ingress_rule" "allow_tls_ipv4" {
   for_each = var.from_port
   security_group_id = aws_security_group.allow_tls.id
-  cidr_ipv4         = var.vpc_id
+  cidr_ipv4         = var.vpc_cidr
   from_port         = each.value
   ip_protocol       = "tcp"
   to_port           = each.value
 }
 resource "aws_vpc_security_group_ingress_rule" "rds_rule" {
   security_group_id = aws_security_group.allow_tls.id
-  cidr_ipv4         = var.vpc_id
+  cidr_ipv4         = var.vpc_cidr
   from_port         = 3306
   ip_protocol       = "tcp"
   to_port           = 3306

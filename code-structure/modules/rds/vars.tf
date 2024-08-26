@@ -22,3 +22,6 @@ variable "from_port" {
 variable "public_rt_cidr_block" {
   
 }
+variable "vpc_cidr" {
+  
+}
