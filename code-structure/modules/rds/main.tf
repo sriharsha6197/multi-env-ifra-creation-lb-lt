@@ -49,6 +49,8 @@ resource "aws_rds_cluster" "default" {
   master_password         = data.aws_ssm_parameter.master_password.value
   vpc_security_group_ids = [aws_security_group.allow_tls.id]
   skip_final_snapshot = true
+  apply_immediately =  true
+  backup_retention_period = 0
 }
 
 resource "aws_rds_cluster_instance" "cluster_instances" {
