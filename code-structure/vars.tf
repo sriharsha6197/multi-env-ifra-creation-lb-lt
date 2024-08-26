@@ -52,3 +52,12 @@ variable "components" {
 variable "terraform_controller_instance" {
   
 }
+variable "engine" {
+  
+}
+variable "engine_version" {
+  
+}
+variable "component" {
+  
+}

@@ -18,3 +18,6 @@ image_id = ""
 instance_type = "t3.micro"
 components = ["frontend","backend"]
 terraform_controller_instance = "172.31.45.11/32"
+engine = "aurora-mysql"
+engine_version = "5.7.mysql_aurora.2.11.3"
+component = "mysql"
