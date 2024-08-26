@@ -25,3 +25,6 @@ variable "public_rt_cidr_block" {
 variable "vpc_cidr" {
   
 }
+variable "instance_type_rds" {
+  
+}

@@ -48,4 +48,5 @@ module "rds" {
   public_rt_cidr_block = var.public_rt_cidr_block
   from_port = var.from_port
   vpc_cidr = var.vpc_cidr
+  instance_type_rds = var.instance_type_rds
 }

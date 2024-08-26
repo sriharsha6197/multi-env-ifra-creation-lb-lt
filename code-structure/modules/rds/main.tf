@@ -49,3 +49,12 @@ resource "aws_rds_cluster" "default" {
   master_password         = data.aws_ssm_parameter.master_password.value
   vpc_security_group_ids = [aws_security_group.allow_tls.id]
 }
+
+resource "aws_rds_cluster_instance" "cluster_instances" {
+  count              = 1
+  identifier         = "${var.env}-rds-cluster-instance-${count.index}"
+  cluster_identifier = aws_rds_cluster.default.id
+  instance_class     = var.instance_type_rds
+  engine             = aws_rds_cluster.default.engine
+  engine_version     = aws_rds_cluster.default.engine_version
+}

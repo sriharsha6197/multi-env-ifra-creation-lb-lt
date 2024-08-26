@@ -61,3 +61,6 @@ variable "engine_version" {
 variable "component" {
   
 }
+variable "instance_type_rds" {
+  
+}
