@@ -19,3 +19,9 @@ variable "from_port" {
 variable "vpc_id" {
   
 }
+variable "zone_id" {
+  
+}
+variable "dns_name" {
+  
+}
