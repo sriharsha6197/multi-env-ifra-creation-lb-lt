@@ -51,6 +51,7 @@ resource "aws_rds_cluster" "default" {
   skip_final_snapshot = true
   apply_immediately =  true
   backup_retention_period = 0
+  final_snapshot_identifier = "example-cluster-final-snapshot"csdv
 }
 
 resource "aws_rds_cluster_instance" "cluster_instances" {
