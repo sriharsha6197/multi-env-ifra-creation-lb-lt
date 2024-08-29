@@ -73,3 +73,6 @@ variable "frontend_app_port" {
 variable "backend_app_port" {
   
 }
+variable "target_group" {
+  
+}
