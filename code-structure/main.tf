@@ -38,7 +38,7 @@ module "lt" {
   private_subnets = module.vpc.PRIVATE_SUBNETS
   terraform_controller_instance = var.terraform_controller_instance
   app_port = each.value == "frontend" ? var.frontend_app_port : var.backend_app_port
-  target_group = aws_lb_target_group.tg.arn
+  target_group = module.lt.aws_lb_target_group.arn
 }
 
 module "rds" {
