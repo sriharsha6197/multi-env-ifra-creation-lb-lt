@@ -22,6 +22,8 @@ module "lb" {
   SUBNETS = each.value == "false" ? module.vpc.PUBLIC_SUBNETS : module.vpc.PRIVATE_SUBNETS
   zone_id = "Z030252326BBGPIZTAXX7"
   dns_name = each.value == "false" ? "frontend.sriharsha.cloudns.ch" : "backend.sriharsha.cloudns.ch"
+  target_group = module.lt.aws_lb_tg
+  app_port = each.key == "public" ? var.frontend_app_port : var.backend_app_port
 }
 
 module "lt" {

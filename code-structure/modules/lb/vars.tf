@@ -25,3 +25,9 @@ variable "zone_id" {
 variable "dns_name" {
   
 }
+variable "app_port" {
+  
+}
+variable "target_group" {
+  
+}
