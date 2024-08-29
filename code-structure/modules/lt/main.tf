@@ -103,6 +103,6 @@ resource "aws_lb_target_group" "tg" {
   name        = "${var.env}-${var.components}-tg"
   target_type = "alb"
   port        = var.app_port
-  protocol    = "HTTP"
+  protocol    = "TCP"
   vpc_id = var.vpc_id
 }
