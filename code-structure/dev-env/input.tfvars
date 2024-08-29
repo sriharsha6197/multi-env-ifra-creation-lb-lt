@@ -22,3 +22,5 @@ engine = "aurora-mysql"
 engine_version = "5.7.mysql_aurora.2.11.3"
 component = "mysql"
 instance_type_rds = "db.t3.medium"
+frontend_app_port = 80
+backend_app_port = 8080

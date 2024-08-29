@@ -64,3 +64,15 @@ variable "component" {
 variable "instance_type_rds" {
   
 }
+variable "app_port" {
+  
+}
+variable "target_group" {
+  
+}
+variable "frontend_app_port" {
+  
+}
+variable "backend_app_port" {
+  
+}

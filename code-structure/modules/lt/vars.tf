@@ -28,3 +28,9 @@ variable "terraform_controller_instance" {
 variable "vpc_cidr" {
   
 }
+variable "app_port" {
+  
+}
+variable "target_group" {
+  
+}

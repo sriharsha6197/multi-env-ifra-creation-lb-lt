@@ -92,8 +92,16 @@ resource "aws_autoscaling_group" "bar" {
   max_size           = 1
   min_size           = 1
   vpc_zone_identifier = var.private_subnets
+  target_group_arns = var.target_group
   launch_template {
     id      = aws_launch_template.foo.id
     version = "$Latest"
   }
+}
+
+resource "aws_lb_target_group" "tg" {
+  name        = "${var.env}-${var.components}-tg"
+  target_type = "alb"
+  port        = var.app_port
+  protocol    = "TCP"
 }

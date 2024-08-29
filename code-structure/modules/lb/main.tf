@@ -27,7 +27,7 @@ resource "aws_lb" "test" {
   load_balancer_type = "application"
   security_groups    = [aws_security_group.allow_tls.id]
   subnets            = var.SUBNETS
-
+  
   tags = {
     Environment = "${var.env}-${var.alb_type}-lb"
   }
@@ -38,5 +38,5 @@ resource "aws_route53_record" "www" {
   name    = var.dns_name
   type    = "CNAME"
   ttl     = 300
-  records = [aws_lb.test.dns_name]
+  records = [aws_lb.test.s_name]
 }
