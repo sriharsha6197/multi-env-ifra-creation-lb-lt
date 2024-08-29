@@ -25,3 +25,4 @@ instance_type_rds = "db.t3.medium"
 frontend_app_port = 80
 backend_app_port = 8080
 app_port = ""
+target_group = ""
