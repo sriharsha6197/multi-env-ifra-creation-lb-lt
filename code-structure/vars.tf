@@ -47,7 +47,7 @@ variable "instance_type" {
   
 }
 variable "components" {
-  
+  type = set(string)
 }
 variable "terraform_controller_instance" {
   
@@ -59,7 +59,7 @@ variable "engine_version" {
   
 }
 variable "component" {
-  type = set(string)
+  
 }
 variable "instance_type_rds" {
   
