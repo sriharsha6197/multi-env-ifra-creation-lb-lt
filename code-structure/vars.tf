@@ -47,7 +47,7 @@ variable "instance_type" {
   
 }
 variable "components" {
-  type = set(string)
+  type = list(string)
 }
 variable "terraform_controller_instance" {
   
