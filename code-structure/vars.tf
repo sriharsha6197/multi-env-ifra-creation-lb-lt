@@ -59,7 +59,7 @@ variable "engine_version" {
   
 }
 variable "component" {
-  
+  type = set(string)
 }
 variable "instance_type_rds" {
   
