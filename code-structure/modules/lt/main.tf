@@ -88,7 +88,7 @@ resource "aws_launch_template" "foo" {
 
 }
 resource "aws_autoscaling_group" "bar" {
-  for_each = zipmap(range(length(var.components)),var.components)
+  for_each = var.components
   desired_capacity   = 1
   max_size           = 1
   min_size           = 1
@@ -101,7 +101,7 @@ resource "aws_autoscaling_group" "bar" {
 }
 
 resource "aws_lb_target_group" "tg" {
-  for_each = zipmap(range(length(var.components)),var.components)
+  for_each = var.components
   name        = "${var.env}-${each.value}-tg"
   port        = var.app_port
   protocol    = "HTTP"
