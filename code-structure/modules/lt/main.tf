@@ -100,7 +100,8 @@ resource "aws_autoscaling_group" "bar" {
 }
 
 resource "aws_lb_target_group" "tg" {
-  name        = "${var.env}-${var.components}-tg"
+  for_each = var.components
+  name        = "${var.env}-${each.value}-tg"
   port        = var.app_port
   protocol    = "HTTP"
   vpc_id = var.vpc_id
