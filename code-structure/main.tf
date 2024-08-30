@@ -29,7 +29,7 @@ module "lb" {
 module "lt" {
   source = "./modules/lt"
   env = var.env
-  for_each = var.components
+  for_each = zipmap(range(length(var.components)),var.components)
   vpc_cidr = var.vpc_cidr
   image_id = module.vpc.IMAGE_ID
   instance_type = var.instance_type

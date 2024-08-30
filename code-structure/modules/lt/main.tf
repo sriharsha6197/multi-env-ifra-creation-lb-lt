@@ -100,8 +100,7 @@ resource "aws_autoscaling_group" "bar" {
 }
 
 resource "aws_lb_target_group" "tg" {
-  for_each = zipmap(range(length(var.components)),var.components)
-  name        = "${var.env}-${each.value}-tg"
+  name        = "${var.env}-${var.components}-tg"
   port        = var.app_port
   protocol    = "HTTP"
   vpc_id = var.vpc_id
