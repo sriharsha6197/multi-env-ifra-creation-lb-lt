@@ -26,3 +26,13 @@ frontend_app_port = 80
 backend_app_port = 8080
 app_port = ""
 target_group = ""
+tgs = {
+   frontend = {
+    port = 80
+    protocol = "HTTP"
+   }
+   backend = {
+    port = 8080
+    protocol = "HTTP"
+   } 
+}

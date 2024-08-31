@@ -88,7 +88,6 @@ resource "aws_launch_template" "foo" {
 
 }
 resource "aws_autoscaling_group" "bar" {
-  name = "${var.env}-${var.components}-asg"
   desired_capacity   = 1
   max_size           = 1
   min_size           = 1
@@ -101,8 +100,9 @@ resource "aws_autoscaling_group" "bar" {
 }
 
 resource "aws_lb_target_group" "tg" {
-  name        = "${var.env}-${var.components}-tg"
-  port        = var.app_port
-  protocol    = "HTTP"
+  for_each = var.tgs
+  name        = each.key
+  port        = each.value.port
+  protocol    = each.value.protocol
   vpc_id = var.vpc_id
 }
