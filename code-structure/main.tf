@@ -42,6 +42,10 @@ module "lt" {
   app_port = each.value == "frontend" ? var.frontend_app_port : var.backend_app_port
 }
 
+output "lts" {
+  value = module.lt.aws_lb_tg
+}
+
 module "rds" {
   source = "./modules/rds"
   component = var.component
