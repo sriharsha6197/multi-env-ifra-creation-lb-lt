@@ -88,6 +88,7 @@ resource "aws_launch_template" "foo" {
 
 }
 resource "aws_autoscaling_group" "bar" {
+  name = "${var.env}-${var.components}-asg"
   desired_capacity   = 1
   max_size           = 1
   min_size           = 1
