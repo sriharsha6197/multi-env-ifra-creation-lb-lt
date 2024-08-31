@@ -76,12 +76,3 @@ variable "backend_app_port" {
 variable "target_group" {
   
 }
-variable "tgs" {
-  type = map(object({
-    port = number
-    protocol = string
-  }))
-  default = {
-    
-  }
-}
