@@ -26,7 +26,6 @@ variable "SUBNETS" {
   
 }
 variable "alb_type_internal" {
-  type = map(string)
   default = {
     
   }

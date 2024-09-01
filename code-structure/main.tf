@@ -15,13 +15,13 @@ module "lb" {
   for_each = var.alb_type_internal
   env = var.env
   alb_type = each.key
-  internal = each.value
+  internal = each.value["internal"]
   public_rt_cidr_block = var.public_rt_cidr_block
   from_port = var.from_port
   vpc_id = module.vpc.VPC_ID
-  SUBNETS = each.value == "false" ? module.vpc.PUBLIC_SUBNETS : module.vpc.PRIVATE_SUBNETS
+  SUBNETS = each.value["internal"] == "false" ? module.vpc.PUBLIC_SUBNETS : module.vpc.PRIVATE_SUBNETS
   zone_id = "Z030252326BBGPIZTAXX7"
-  dns_name = each.value == "false" ? "frontend.sriharsha.cloudns.ch" : "backend.sriharsha.cloudns.ch"
+  dns_name = each.value["internal"] == "false" ? "frontend.sriharsha.cloudns.ch" : "backend.sriharsha.cloudns.ch"
   app_port = each.key == "public" ? var.frontend_app_port : var.backend_app_port
   target_group = module.lt.aws_lb_tg
 }
