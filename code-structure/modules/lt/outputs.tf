@@ -1,4 +1,4 @@
 output "aws_lb_tg" {
-  value = aws_lb_target_group.tg.arn
+  value = lookup(aws_lb_target_group.tg[name],"arn","Not Found")
 }
 
