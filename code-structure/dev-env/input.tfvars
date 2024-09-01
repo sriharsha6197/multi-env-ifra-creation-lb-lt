@@ -5,12 +5,14 @@ private_subnets = ["192.168.3.0/24","192.168.4.0/24"]
 public_rt_cidr_block = "0.0.0.0/0"
 from_port = [443,80,22]
 alb_type_internal = {
-    public = {
+    frontend = {
+        alb_type = "public",
         internal = "false",
         port = 80,
         protocol = "HTTP",
     }
-    private = {
+    backend = {
+        alb_type = "private"
         internal = true
         port = 8080
         protocol = "HTTP"
