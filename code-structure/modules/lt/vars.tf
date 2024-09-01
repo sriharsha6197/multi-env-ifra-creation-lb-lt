@@ -31,3 +31,6 @@ variable "vpc_cidr" {
 variable "app_port" {
   
 }
+variable "alb_type_internal" {
+  
+}
