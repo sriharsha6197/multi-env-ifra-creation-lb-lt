@@ -6,12 +6,14 @@ public_rt_cidr_block = "0.0.0.0/0"
 from_port = [443,80,22]
 alb_type_internal = {
     frontend = {
+        name = "frontend"
         alb_type = "public",
         internal = "false",
         port = 80,
         protocol = "HTTP",
     }
     backend = {
+        name = "backend"
         alb_type = "private"
         internal = true
         port = 8080
