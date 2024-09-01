@@ -30,6 +30,7 @@ module "lb" {
 module "lt" {
   source = "./modules/lt"
   env = var.env
+  alb_type_internal = var.alb_type_internal
   for_each = var.alb_type_internal
   vpc_cidr = var.vpc_cidr
   image_id = module.vpc.IMAGE_ID
