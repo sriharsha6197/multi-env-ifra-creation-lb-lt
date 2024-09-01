@@ -23,7 +23,7 @@ module "lb" {
   zone_id = "Z030252326BBGPIZTAXX7"
   dns_name = each.value["internal"] == "false" ? "frontend.sriharsha.cloudns.ch" : "backend.sriharsha.cloudns.ch"
   app_port = each.value["alb_type"] == "public" ? var.frontend_app_port : var.backend_app_port
-  target_group = module.lt.aws_lb_tg
+  target_group = lookup(module.lt.aws_lb_tg,each.value,null)
 }
 
 module "lt" {
